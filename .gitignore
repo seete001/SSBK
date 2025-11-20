@@ -1,34 +1,33 @@
--------------------------------------------------------------------
-
-Konfigurationsdatei für Git, um bestimmte Dateien zu ignorieren
-
--------------------------------------------------------------------
-
-1. Datenbanken
-
-Die SQLite-Datenbankdatei sollte nicht versioniert werden, da sie laufend
-
-geänderte Benutzerdaten enthält.
-
-todo.db
-
-2. Virtuelle Umgebung
-
-Der gesamte Ordner der virtuellen Umgebung (venv) sollte ignoriert werden.
-
-/venv/
-
-3. Python-spezifische Dateien
-
-Kompilierte Python-Dateien
-
+# --- Python ---
+__pycache__/
 *.pyc
+*.pyo
+*.pyd
+*.pdb
+*.tmp
+*$py.class
 
-pycache Ordner
+# --- Virtual environment ---
+.venv/
+env/
+venv/
 
-pycache/
+# --- Environment variables / secrets ---
+config.py
+*.env
+.env.*
 
-Dateien, die durch Flask/Pycharm/etc. generiert werden
+# --- Databases ---
+*.db
+db/*.db
+instance/*.db
 
+# --- Flask ---
+instance/
+*.log
+
+# --- VSCode ---
 .vscode/
-.idea/
+
+# --- macOS ---
+.DS_Store
