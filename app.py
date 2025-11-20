@@ -4,7 +4,7 @@ from wtforms import StringField, TextAreaField, SubmitField
 from wtforms.validators import DataRequired, Email, Length, Regexp
 import sqlite3
 import config
-from dbase import db_init
+from db.dbase import db_init
 
 db_file = config.DB_FILE_PATH
 db_init(db_file)

@@ -13,3 +13,5 @@ def db_init(filepath):
             message TEXT
         )
     ''')
+    conn.commit()
+    conn.close()
