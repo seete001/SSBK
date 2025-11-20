@@ -34,9 +34,9 @@ def index():
             conn = sqlite3.connect(db_file)
             cursor = conn.cursor()
             cursor.execute('''
-                INSERT INTO contacts (name, email, phone, message)
-                VALUES (?, ?, ?, ?)
-            ''', (form.name.data, form.email.data, form.phone.data, form.message.data))
+                INSERT INTO contacts (name, email, phone, message, sent)
+                VALUES (?, ?, ?, ?, ?)
+            ''', (form.name.data, form.email.data, form.phone.data, form.message.data, None))
             conn.commit()
             conn.close()
             flash("Your message has been sent successfully!", "success")

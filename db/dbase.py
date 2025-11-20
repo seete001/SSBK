@@ -10,7 +10,8 @@ def db_init(filepath):
             name TEXT,
             email TEXT,
             phone TEXT,
-            message TEXT
+            message TEXT,
+            sent INTEGER
         )
     ''')
     conn.commit()
